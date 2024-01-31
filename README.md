@@ -10,6 +10,6 @@
 A simple grocery list manager that makes shopping easy.
 
 ## Technologies
-**Front End**: TBD\
+**Front End**: Qt6\
 **Back End**: C++, SQLStudioLite\
 **Platform**: Windows/Mac
