@@ -1,0 +1,4 @@
+# directories to ignore
+.idea/
+build-App-Qt_6_6_2_for_macOS-Debug/
+*.DS_Store
