@@ -122,6 +122,14 @@ ApplicationWindow {
                         pageLoader.source = "ItemOptions.qml"
                     }
                 }
+
+                Button {
+                    text: qsTr("Quit Application")
+                    highlighted: true
+                    onClicked: {
+                        Qt.quit()
+                    }
+                }
             }
         }
     }
