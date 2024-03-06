@@ -19,7 +19,10 @@ qt_add_qml_module(appApp
     QML_FILES AddNewItem.qml
     QML_FILES
     QML_FILES AddItemToList.qml
-    QML_FILES ContactModel.qml
+    QML_FILES ItemOptions.qml
+    QML_FILES Database.js
+    QML_FILES
+    QML_FILES List.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

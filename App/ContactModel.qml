@@ -1,4 +1,6 @@
 import QtQuick
+import QtQuick.LocalStorage
+import "Database.js" as DB
 
 // dummy list for UI work
 ListModel {
