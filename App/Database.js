@@ -55,7 +55,6 @@ function dbInsertLineItem(GroceryListID, LineNum, Quantity, Unit, Checked, ItemI
 function dbAddItemToList(Quantity, Unit, ItemName)
 {
     let db = dbGetHandle()
-    let rowid = 0;
     let ItemID;
     let results;
 
@@ -64,7 +63,7 @@ function dbAddItemToList(Quantity, Unit, ItemName)
         results = tx.executeSql('SELECT Quantity, Unit, Checked, ItemID FROM LineItem')
     })
 
-    let lineNum = results.rows.length + 1
+    let lineNum = results.rows.length + 1   // gets result size and increment by 1 to get an item's line number
 
     dbInsertLineItem(1, lineNum, Quantity, Unit, 0, ItemID.rows.item(0).ItemID)
 }
@@ -116,12 +115,13 @@ function dbReadAll()
         for (let i = 0; i < results.rows.length; i++) {
             itemName = tx.executeSql('SELECT ItemName from Item WHERE ItemID = ?', [results.rows.item(i).ItemID])
 
-            console.log("LineItem size: " + results.rows.length)
-            console.log(results.rows.item(i).ItemID)
-            console.log(itemName.rows.item(0).ItemName)
-            console.log(results.rows.item(i).Quantity)
-            console.log(results.rows.item(i).Unit)
-            console.log(results.rows.item(i).Checked)
+            // for debugging only
+            // console.log("LineItem size: " + results.rows.length)
+            // console.log(results.rows.item(i).ItemID)
+            // console.log(itemName.rows.item(0).ItemName)
+            // console.log(results.rows.item(i).Quantity)
+            // console.log(results.rows.item(i).Unit)
+            // console.log(results.rows.item(i).Checked)
 
             listModel.append({
                 itemName: itemName.rows.item(0).ItemName,
@@ -133,6 +133,7 @@ function dbReadAll()
     })
 }
 
+// read all individual items that the user has added
 function dbReadAllItems()
 {
     let db = dbGetHandle()

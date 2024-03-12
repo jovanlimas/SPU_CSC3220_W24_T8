@@ -35,8 +35,9 @@ ApplicationWindow {
                     id: mainList
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    width: 250; height: 200
+                    width: 250; height: 500
                     leftMargin: 40
+                    topMargin: 40
                     spacing: 10
                     model: List {}
                     delegate: listDelegate
@@ -57,13 +58,6 @@ ApplicationWindow {
                 topPadding: 200
                 leftPadding: 40
 
-                // Button {
-                //     text: qsTr("Refresh")
-                //     onClicked: {
-                //         pageLoader.source = "Main.qml"
-                //     }
-                // }
-
                 MessageDialog {
                     id: clearItemsDialog
                     text: "You have cleared everything."
@@ -73,7 +67,7 @@ ApplicationWindow {
                 }
 
                 Button {
-                    text: qsTr("CAUTION! Clear Everything")
+                    text: qsTr("CAUTION! Clear All Data")
                     highlighted: true
                     onClicked: {
                         DB.dbDeleteItems()
